@@ -1,0 +1,22 @@
+{
+	"name": "hermajan/fazette",
+	"description": "",
+	"type": "library",
+	"support": {
+		"issues": "https://github.com/hermajan/fazette/issues"
+	},
+	"license": "MIT",
+	"autoload": {
+		"classmap": [""]
+	},
+	"config": {
+		"vendor-dir": "libs",
+		"sort-packages": true,
+		"optimize-autoloader": true
+	},
+	"require-dev": {
+		"latte/latte": "^2.4",
+		"nette/tester": "^1.7",
+		"nette/nette-minified": "^2.4"
+	}
+}
