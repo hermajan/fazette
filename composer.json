@@ -7,7 +7,9 @@
 	},
 	"license": "MIT",
 	"autoload": {
-		"classmap": [""]
+		"psr-4": {
+			"Fazette\\": "src"
+		}
 	},
 	"config": {
 		"vendor-dir": "libs",
