@@ -44,13 +44,12 @@ function setFormForRenderers(\Nette\Forms\Form $form) {
 	
 	$form->addGroup("Submit");
 	$form->addCheckbox("agree", "I agree with terms")->setRequired("You must agree with our terms.");
-	$form->addHidden("user_id");
+	$form->addHidden("user_id", 8);
 	$form->addSubmit("send", "Submit");
 	
 	if($form->isSuccess()) {
-		$values = $form->getValues(true);
-		//echo "<pre>".var_export($values, true)."</pre>";
-//		\Fazette\Forms::fixFormValues($values);
+		$values = $form->getValues();
+		\Fazette\forms\Controls::fixValues($values);
 		\Tracy\Debugger::dump($values);
 	}
 	
