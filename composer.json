@@ -1,7 +1,8 @@
 {
 	"name": "hermajan/fazette",
-	"description": "",
+	"description": "Extensions for Nette framework.",
 	"type": "library",
+	"homepage": "https://hermajan.net/fazette",
 	"support": {
 		"issues": "https://github.com/hermajan/fazette/issues"
 	},
@@ -16,9 +17,13 @@
 		"sort-packages": true,
 		"optimize-autoloader": true
 	},
+	"require": {
+		"php": "^7.0"
+	},
 	"require-dev": {
 		"latte/latte": "^2.4",
-		"nette/tester": "^1.7",
-		"nette/nette-minified": "^2.4"
+		"nette/tester": "^2.0",
+		"nette/forms": "^2.4",
+		"nette/utils": "^2.4"
 	}
 }

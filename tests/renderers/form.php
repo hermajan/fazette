@@ -1,4 +1,6 @@
 <?php
+Tester\Assert::noError(function() {});
+
 function setFormForRenderers(\Nette\Forms\Form $form) {
 	$form->addGroup("Personal data");
 	$form->addText("name", "Name:");
