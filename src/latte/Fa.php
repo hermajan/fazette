@@ -23,7 +23,7 @@ class Fa extends \Latte\Macros\MacroSet {
 	 * @return string
 	 */
 	public function macroFa(\Latte\MacroNode $node, \Latte\PhpWriter $writer) {
-		return $writer->write('echo \Fazette\latte\Fa::renderFa(%node.word, %node.array)');
+		return $writer->write('echo \Fazette\latte\Fa::createIcon(%node.word, %node.array)');
 	}
 
 	/**
@@ -32,14 +32,14 @@ class Fa extends \Latte\Macros\MacroSet {
 	 * @param array $arguments Optional arguments for the icon (see http://fontawesome.io/examples).
 	 * @return \Nette\Utils\Html HTML element with icon and its arguments.
 	 */
-	public static function renderFa($icon, array $arguments=null) {
+	public static function createIcon(string $icon, array $arguments=null) {
 		$element = \Nette\Utils\Html::el("i");
 		
 		if($icon == "b" or $icon == "l" or $icon == "s" or $icon == "r") {
-			// Markup of icon use Font Awesome 5.
+			// Markup of icon which use Font Awesome 5.
 			$class = ["fa".$icon];
 		} else {
-			// Markup of icon use Font Awesome 4.
+			// Markup of icon which use Font Awesome 4.
 			$class = ["fa fa-".$icon];
 		}
 		

@@ -13,7 +13,7 @@ install:
   - composer install --no-interaction --prefer-source
 
 script:
-  - ./libs/bin/tester -s ./tests/
+  - ./vendor/bin/tester -s ./tests/
 
 allow_failures:
   - php: nightly
