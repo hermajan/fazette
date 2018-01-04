@@ -1,21 +1,21 @@
 <?php
-namespace Fazette\tests;
-require __DIR__."/../_setup.php";
+namespace Fazette\tests\latte;
+require __DIR__."/../../_setup.php";
 use Tester\Assert;
 
 /**
- * Tests class Fa.
+ * Tests class Fa as Font Awesome 4.
  * @testCase
  */
-class Fa extends \Tester\TestCase {
+class Fa4 extends \Tester\TestCase {
 	protected function render($file) {
 		$latte = new \Latte\Engine();
-		$latte->setTempDirectory(__DIR__."/../../.temp/");
+		$latte->setTempDirectory(__DIR__."/../../../.temp/");
 		$latte->onCompile[] = function(\Latte\Engine $engine) {
 			\Fazette\latte\Fa::install($engine->getCompiler());
 		};
 		
-		$result = $latte->renderToString(__DIR__."/templates/".$file.".latte");
+		$result = $latte->renderToString(__DIR__."/4/".$file.".latte");
 		return trim($result);
 	}
 	
@@ -81,5 +81,5 @@ class Fa extends \Tester\TestCase {
 	}
 }
 
-$testCase = new Fa;
+$testCase = new Fa4;
 $testCase->run();

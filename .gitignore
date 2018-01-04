@@ -1,4 +1,4 @@
 composer.phar
-/libs/
-/.temp
-/.idea
+/vendor/
+/.temp/
+/.idea/

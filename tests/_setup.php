@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__."/../libs/autoload.php";
+require_once __DIR__."/../vendor/autoload.php";
 
 $temp = __DIR__."/../.temp";
 if(!is_dir($temp)) {

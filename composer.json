@@ -13,7 +13,7 @@
 		}
 	},
 	"config": {
-		"vendor-dir": "libs",
+		"vendor-dir": "vendor",
 		"sort-packages": true,
 		"optimize-autoloader": true
 	},

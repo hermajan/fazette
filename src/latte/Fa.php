@@ -11,9 +11,9 @@ class Fa extends \Latte\Macros\MacroSet {
 	 * @return static
 	 */
 	public static function install(\Latte\Compiler $compiler) {
-		$me = new static($compiler);
-		$me->addMacro("fa", [$me, "macroFa"]);
-		return $me;
+		$lc = new static($compiler);
+		$lc->addMacro("fa", [$lc, "macroFa"]);
+		return $lc;
 	}
 
 	/**
@@ -34,7 +34,14 @@ class Fa extends \Latte\Macros\MacroSet {
 	 */
 	public static function renderFa($icon, array $arguments=null) {
 		$element = \Nette\Utils\Html::el("i");
-		$class = ["fa fa-".$icon];
+		
+		if($icon == "b" or $icon == "l" or $icon == "s" or $icon == "r") {
+			// Markup of icon use Font Awesome 5.
+			$class = ["fa".$icon];
+		} else {
+			// Markup of icon use Font Awesome 4.
+			$class = ["fa fa-".$icon];
+		}
 		
 		if(isset($arguments)) {
 			foreach($arguments as $argument) {
