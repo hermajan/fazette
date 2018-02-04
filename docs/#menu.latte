@@ -1,0 +1,25 @@
+{block #menu}
+<nav class="panel panel-default">
+	<header class="panel-heading" id="fazette-fazette" onclick="window.location='?t=default'">
+		<h4 class="panel-title">
+			<a href="?t=default">Fazette</a>
+			
+			<span class="pull-right">
+				<a href="{$github}" title="View Fazette on GitHub.">{fa b, "github octicon"}</a>
+			</span>
+		</h4>
+	</header>
+	<article class="panel-body">
+		<ul class="nav nav-pills nav-stacked">
+			{import "#blocks.latte"}
+			{include #modules}
+		</ul>
+	</article>
+</nav>
+
+<style>
+	#menu .panel-heading:hover, #menu .panel-heading:hover>h4>a, #menu a:hover {
+		background-color: #fa2e1e!important;
+	}
+</style>
+{/block}

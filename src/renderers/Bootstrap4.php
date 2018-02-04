@@ -1,7 +1,10 @@
 <?php
 namespace Fazette\renderers;
-use Nette;
-use Nette\Forms\Controls;
+
+use Nette\Forms\Controls\{
+	Checkbox, CheckboxList, MultiSelectBox, RadioList, SelectBox, TextArea, TextBase
+};
+use Nette\Forms\Form;
 use Nette\Forms\Rendering\DefaultFormRenderer;
 
 /**
@@ -25,28 +28,28 @@ class Bootstrap4 extends DefaultFormRenderer {
 	
 	/**
 	 * Provides complete form rendering.
-	 * @param  Nette\Forms\Form $form Nette form.
+	 * @param  Form $form Nette form.
 	 * @param  string "begin", "errors", "ownerrors", "body", "end" or empty to render all
 	 * @return string
 	 */
-	public function render(Nette\Forms\Form $form, $mode = null) {
+	public function render(Form $form, $mode = null) {
 		$form->getElementPrototype()->addClass("");
 		
 		foreach($form->getControls() as $control) {
-			if(($control instanceof Controls\Checkbox) or ($control instanceof Controls\CheckboxList) or ($control instanceof Controls\RadioList)) {
+			if(($control instanceof Checkbox) or ($control instanceof CheckboxList) or ($control instanceof RadioList)) {
 				$control->getSeparatorPrototype()->setName("div class='form-check form-check-inline'");
 				$control->getControlPrototype()->addClass('form-check-input');
 			}
-			if($control instanceof Controls\Checkbox) {
+			if($control instanceof Checkbox) {
 				$control->getLabelPrototype()->addClass("form-check-label");
 			}
-			if(($control instanceof Controls\CheckboxList) or ($control instanceof Controls\RadioList)) {
+			if(($control instanceof CheckboxList) or ($control instanceof RadioList)) {
 				$control->getItemLabelPrototype()->addClass("form-check-label");
 			}
-			if($control instanceof Controls\TextBase || $control instanceof Controls\SelectBox || $control instanceof Controls\MultiSelectBox) {
+			if($control instanceof TextBase || $control instanceof SelectBox || $control instanceof MultiSelectBox) {
 				$control->getControlPrototype()->addClass("form-control");
 			}
-			if($control instanceof Controls\TextArea) {
+			if($control instanceof TextArea) {
 				$control->getControlPrototype()->setAttribute("rows", 4);
 			}
 		}

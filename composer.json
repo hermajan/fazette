@@ -22,8 +22,8 @@
 	},
 	"require-dev": {
 		"latte/latte": "^2.4",
-		"nette/tester": "^2.0",
 		"nette/forms": "^2.4",
+		"nette/tester": "^2.0",
 		"nette/utils": "^2.4"
 	}
 }

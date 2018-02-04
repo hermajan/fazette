@@ -1,0 +1,35 @@
+{layout $layoutFile}
+{var $title="Fa macro"}
+
+{block #content}
+<h1 class="page-header">{$title}</h1>
+<p>This macro is for template engine <a href="https://latte.nette.org/">Latte</a> and it can render <a href="https://fontawesome.com/">Font Awesome</a> icon.</p>
+
+<h3>Installation</h3>
+<ul>
+	<li>
+		<p>If you use <a href="https://nette.org/">Nette</a>, add to <code>config.neon</code> this:</p>
+<pre><code>latte:
+	macros:
+		- Fazette\latte\Fa
+</code></pre>
+	</li>
+	<li><p>If you use only <a href="https://latte.nette.org/">Latte</a>, install it like this:</p>
+<pre><code class="php">$latte = new Latte\Engine;
+$latte->onCompile[] = function(\Latte\Engine $engine) {
+	\Fazette\latte\Fa::install($engine->getCompiler());
+};
+</code></pre>
+	</li>
+</ul>
+
+<h3>Usage</h3>
+<p>For example rendering icon <a href="https://fontawesome.com/icons/car?style=solid">fa-car</a>, use:</p>
+<ul>
+	<li><code>&#123;fa car&#125;</code> for Font Awesome 4</li>
+	<li><code>&#123;fa s, car&#125;</code> for Font Awesome 5</li>
+</ul>
+<p>Macro renders this: {fa car}</p>
+
+<p>You can use some more arguments, just look for <a href="{$github}/tree/master/tests/latte/fa">examples in tests</a>.</p>
+{/block}

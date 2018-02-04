@@ -1,0 +1,127 @@
+/* Navbar */
+.navbar-inverse {
+  background-color: #fa2e1e;
+  border-color: #fa2e1e; }
+  .navbar-inverse .navbar-nav > li > a {
+    color: whitesmoke; }
+    .navbar-inverse .navbar-nav > li > a:focus, .navbar-inverse .navbar-nav > li > a:hover {
+      background-color: whitesmoke;
+      color: firebrick; }
+    .navbar-inverse .navbar-nav > li > a > i {
+      color: inherit; }
+  .navbar-inverse .navbar-nav > .active > a {
+    background-color: firebrick; }
+    .navbar-inverse .navbar-nav > .active > a:hover {
+      background-color: whitesmoke;
+      color: firebrick; }
+
+.navbar-brand {
+  color: ghostwhite !important; }
+
+/* Menu */
+#menu a:hover, #menu li.active > a {
+  background-color: firebrick;
+  color: white; }
+#menu .panel-heading, #menu .panel-heading a {
+  background-color: #fa2e1e;
+  color: whitesmoke; }
+#menu .panel-heading.active, #menu .panel-heading.active > h4 > a {
+  background-color: firebrick; }
+#menu .panel, #menu .nav > li > a {
+  border-color: #fa2e1e; }
+
+/* Footer */
+#footer {
+  background-color: white; }
+
+html, body {
+  height: 100%; }
+
+.container-fluid {
+  margin: 0 20px; }
+  @media (min-width: 1000px) {
+    .container-fluid {
+      margin: 0 40px; } }
+
+/* Navbar */
+.navbar {
+  min-height: 50px;
+  margin-bottom: 0; }
+  .navbar .nav > li > a {
+    padding: 15px 10px; }
+
+.navbar-brand > img {
+  display: inline; }
+
+.logo {
+  height: 32px; }
+
+/* Menu */
+#menu {
+  padding: 10px 0 0 0; }
+  #menu .nav {
+    max-width: 300px; }
+  #menu ul.inside {
+    margin-left: 20px; }
+
+/* Wrapper for page content to push down footer */
+#content {
+  min-height: calc(100% - 50px - 1px);
+  height: auto;
+  /* Negative indent footer by its height */
+  margin: 0 auto -40px;
+  /* Pad bottom by footer height */
+  padding: 0 0 40px; }
+
+/* Content */
+.page-header {
+  margin: 10px 0 5px; }
+
+.icon {
+  width: 16px; }
+
+p {
+  text-align: justify; }
+
+td {
+  vertical-align: middle !important; }
+
+iframe {
+  width: 100%;
+  border: 0; }
+
+/* Bootstrap Panels */
+.panel {
+  margin-bottom: 0; }
+
+.panel-heading {
+  cursor: pointer; }
+  .panel-heading .toggle {
+    font-family: "Font Awesome 5 Free", serif;
+    font-weight: 900; }
+    .panel-heading .toggle:after {
+      content: "\f078";
+      /* symbol for "opening" panels */ }
+  .panel-heading.collapsed .toggle:after {
+    content: "\f054";
+    /* symbol for "collapsed" panels */ }
+
+.panel-title img {
+  height: 24px; }
+
+/* Anchor, for permalinks on page chapters */
+.anchor, .anchor > small {
+  color: transparent; }
+  .anchor:hover, .anchor > small:hover {
+    color: #777;
+    text-decoration: none; }
+
+/* Footer */
+#footer {
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 40px; }
+  #footer > .container-fluid {
+    padding: 10px 15px 0; }
+
+/*# sourceMappingURL=style.css.map */

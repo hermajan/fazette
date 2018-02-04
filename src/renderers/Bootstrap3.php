@@ -1,7 +1,10 @@
 <?php
 namespace Fazette\renderers;
-use Nette;
-use Nette\Forms\Controls;
+
+use Nette\Forms\Controls\{
+	Checkbox, CheckboxList, MultiSelectBox, RadioList, SelectBox, TextArea, TextBase
+};
+use Nette\Forms\Form;
 use Nette\Forms\Rendering\DefaultFormRenderer;
 
 /**
@@ -25,30 +28,30 @@ class Bootstrap3 extends DefaultFormRenderer {
 	
 	/**
 	 * Provides complete form rendering.
-	 * @param  Nette\Forms\Form $form Nette form.
+	 * @param  Form $form Nette form.
 	 * @param  string "begin", "errors", "ownerrors", "body", "end" or empty to render all
 	 * @return string
 	 */
-	public function render(Nette\Forms\Form $form, $mode = null) {
+	public function render(Form $form, $mode = null) {
 		$form->getElementPrototype()->addClass("form-horizontal");
 		
 		foreach($form->getControls() as $control) {
-			if($control instanceof Controls\Checkbox || $control instanceof Controls\CheckboxList || $control instanceof Controls\RadioList) {
+			if($control instanceof Checkbox || $control instanceof CheckboxList || $control instanceof RadioList) {
 				$control->getSeparatorPrototype()->setName(null);
 			}
-			if($control instanceof Controls\Checkbox) {
+			if($control instanceof Checkbox) {
 				$control->getLabelPrototype()->addClass("checkbox-inline");
 			}
-			if($control instanceof Controls\CheckboxList) {
+			if($control instanceof CheckboxList) {
 				$control->getItemLabelPrototype()->addClass("checkbox-inline");
 			}
-			if($control instanceof Controls\RadioList) {
+			if($control instanceof RadioList) {
 				$control->getItemLabelPrototype()->addClass("radio-inline");
 			}
-			if($control instanceof Controls\TextBase || $control instanceof Controls\SelectBox || $control instanceof Controls\MultiSelectBox) {
+			if($control instanceof TextBase || $control instanceof SelectBox || $control instanceof MultiSelectBox) {
 				$control->getControlPrototype()->addClass("form-control");
 			}
-			if($control instanceof Controls\TextArea) {
+			if($control instanceof TextArea) {
 				$control->getControlPrototype()->setAttribute("rows", 4);
 			}
 		}
