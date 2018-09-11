@@ -1,5 +1,5 @@
 <?php
-namespace Fazette\forms;
+namespace Fazette\Forms;
 
 /**
  * Handling values of Nette Forms.

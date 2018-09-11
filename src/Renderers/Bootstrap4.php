@@ -1,28 +1,26 @@
 <?php
-namespace Fazette\renderers;
+namespace Fazette\Renderers;
 
-use Nette\Forms\Controls\{
-	Checkbox, CheckboxList, MultiSelectBox, RadioList, SelectBox, TextArea, TextBase
-};
+use Nette\Forms\Controls\{Checkbox, CheckboxList, MultiSelectBox, RadioList, SelectBox, TextArea, TextBase};
 use Nette\Forms\Form;
 use Nette\Forms\Rendering\DefaultFormRenderer;
 
 /**
- * Bootstrap 3 renderer for Nette Forms.
+ * Bootstrap 4 renderer for Nette Forms.
  */
-class Bootstrap3 extends DefaultFormRenderer {
+class Bootstrap4 extends DefaultFormRenderer {
 	public $wrappers = [
 		"form" => ["container" => null],
 		"error" => ["container" => "div class='alert alert-error'", "item" => "p"],
 		"group" => ["container" => "fieldset", "label" => "legend", "description" => "p"],
 		"controls" => ["container" => null],
-		"pair" => ["container" => "div class=form-group", ".required" => "required", ".optional" => null,
+		"pair" => ["container" => "div class='form-group row'", ".required" => "required", ".optional" => null,
 			".odd" => null, ".error" => "has-error"],
 		"control" => ["container" => "span class=col-sm-10", ".odd" => null, "description" => "span class=help-block",
-			"requiredsuffix" => "", "errorcontainer" => "span class=help-block", "erroritem" => "",
+			"requiredsuffix" => "", "errorcontainer" => "span class=form-text", "erroritem" => "",
 			".required" => "required", ".text" => "text", ".password" => "text", ".file" => "text",
-			".submit" => "btn btn-primary", ".image" => "btn", ".button" => "btn btn-default"],
-		"label" => ["container" => "span class='col-sm-2 control-label'", "suffix" => null, "requiredsuffix" => ""],
+			".submit" => "btn btn-primary", ".image" => "btn", ".button" => "btn btn-secondary"],
+		"label" => ["container" => "span class='col-sm-2'", "suffix" => null, "requiredsuffix" => ""],
 		"hidden" => ["container" => null]
 	];
 	
@@ -33,20 +31,18 @@ class Bootstrap3 extends DefaultFormRenderer {
 	 * @return string
 	 */
 	public function render(Form $form, $mode = null) {
-		$form->getElementPrototype()->addClass("form-horizontal");
+		$form->getElementPrototype()->addClass("");
 		
 		foreach($form->getControls() as $control) {
-			if($control instanceof Checkbox || $control instanceof CheckboxList || $control instanceof RadioList) {
-				$control->getSeparatorPrototype()->setName(null);
+			if(($control instanceof Checkbox) or ($control instanceof CheckboxList) or ($control instanceof RadioList)) {
+				$control->getSeparatorPrototype()->setName("div class='form-check form-check-inline'");
+				$control->getControlPrototype()->addClass('form-check-input');
 			}
 			if($control instanceof Checkbox) {
-				$control->getLabelPrototype()->addClass("checkbox-inline");
+				$control->getLabelPrototype()->addClass("form-check-label");
 			}
-			if($control instanceof CheckboxList) {
-				$control->getItemLabelPrototype()->addClass("checkbox-inline");
-			}
-			if($control instanceof RadioList) {
-				$control->getItemLabelPrototype()->addClass("radio-inline");
+			if(($control instanceof CheckboxList) or ($control instanceof RadioList)) {
+				$control->getItemLabelPrototype()->addClass("form-check-label");
 			}
 			if($control instanceof TextBase || $control instanceof SelectBox || $control instanceof MultiSelectBox) {
 				$control->getControlPrototype()->addClass("form-control");

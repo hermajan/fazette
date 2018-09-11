@@ -1,18 +1,22 @@
 <?php
-namespace Fazette\tests\latte;
+namespace Fazette\Tests\Latte;
+
 require __DIR__."/../../_setup.php";
-use Tester\Assert;
+
+use Fazette\Latte\Fa;
+use Latte\Engine;
+use Tester\{Assert, TestCase};
 
 /**
  * Tests class Fa as Font Awesome 5.
  * @testCase
  */
-class Fa5 extends \Tester\TestCase {
+class Fa5 extends TestCase {
 	protected function render($file) {
-		$latte = new \Latte\Engine();
+		$latte = new Engine();
 		$latte->setTempDirectory(__DIR__."/../../../.temp/");
-		$latte->onCompile[] = function(\Latte\Engine $engine) {
-			\Fazette\latte\Fa::install($engine->getCompiler());
+		$latte->onCompile[] = function(Engine $engine) {
+			Fa::install($engine->getCompiler());
 		};
 		
 		$result = $latte->renderToString(__DIR__."/5/".$file.".latte");

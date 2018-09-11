@@ -10,23 +10,23 @@ use Tester\Assert;
 class Values extends \Tester\TestCase {
 	public function testNullifyString() {
 		$value = "";
-		\Fazette\forms\Values::nullifyString($value);
+		\Fazette\Forms\Values::nullifyString($value);
 		Assert::null($value);
 	}
 	
 	public function testNullifyStrings() {
 		$array = ["", "hello"];
-		\Fazette\forms\Values::nullifyStrings($array);
+		\Fazette\Forms\Values::nullifyStrings($array);
 		$expected = [null, "hello"];
 		Assert::same($expected, $array);
 		
 		$object = (object)["empty" => "", "text" => "hello"];
-		\Fazette\forms\Values::nullifyStrings($object);
+		\Fazette\Forms\Values::nullifyStrings($object);
 		Assert::same(null, $object->empty);
 		Assert::same("hello", $object->text);
 		
 		$object = (object)["array" => ["", "hi"], "text" => "hello"];
-		\Fazette\forms\Values::nullifyStrings($object);
+		\Fazette\Forms\Values::nullifyStrings($object);
 		Assert::same([null, "hi"], $object->array);
 		Assert::same("hello", $object->text);
 	}

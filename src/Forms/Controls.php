@@ -1,7 +1,7 @@
 <?php
-namespace Fazette\forms;
+namespace Fazette\Forms;
 
-use Fazette\latte\Fa;
+use Fazette\Latte\Fa;
 use Nette\Utils\Html;
 
 /**

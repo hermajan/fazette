@@ -1,9 +1,7 @@
 <?php
-namespace Fazette\latte;
+namespace Fazette\Latte;
 
-use Latte\{
-	Compiler, MacroNode, Macros\MacroSet, PhpWriter
-};
+use Latte\{Compiler, MacroNode, Macros\MacroSet, PhpWriter};
 use Nette\Utils\Html;
 
 /**
@@ -28,7 +26,7 @@ class Fa extends MacroSet {
 	 * @return string
 	 */
 	public function macroFa(MacroNode $node, PhpWriter $writer) {
-		return $writer->write('echo \Fazette\latte\Fa::createIcon(%node.word, %node.array)');
+		return $writer->write('echo \Fazette\Latte\Fa::createIcon(%node.word, %node.array)');
 	}
 	
 	/**

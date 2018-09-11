@@ -10,7 +10,7 @@ if(!is_dir($temp)) {
 $latte->setTempDirectory($temp);
 
 $latte->onCompile[] = function(\Latte\Engine $engine) {
-	\Fazette\latte\Fa::install($engine->getCompiler());
+	\Fazette\Latte\Fa::install($engine->getCompiler());
 };
 
 $parameters = [

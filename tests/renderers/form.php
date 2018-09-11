@@ -51,7 +51,7 @@ function setFormForRenderers(\Nette\Forms\Form $form) {
 	
 	if($form->isSuccess()) {
 		$values = $form->getValues();
-		\Fazette\forms\Controls::fixValues($values);
+		\Fazette\Forms\Controls::fixValues($values);
 		\Tracy\Debugger::dump($values);
 	}
 	

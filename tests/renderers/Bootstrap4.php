@@ -13,7 +13,7 @@
 			<section class="row">
 				<article class="col-md-8">
 					<?php $form = new \Nette\Forms\Form;;
-					$form->setRenderer(new \Fazette\renderers\Bootstrap4);
+					$form->setRenderer(new \Fazette\Renderers\Bootstrap4);
 					echo setFormForRenderers($form); ?>
 				</article>
 			</section>
