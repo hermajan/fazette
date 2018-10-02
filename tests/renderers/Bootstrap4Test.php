@@ -1,4 +1,4 @@
-<?php require_once __DIR__."/../_setup.php"; require_once "form.php"; ?>
+<?php require_once __DIR__."/../bootstrap.php"; require_once "form.php"; ?>
 
 <!DOCTYPE html>
 <html>

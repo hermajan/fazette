@@ -1,9 +1,8 @@
 <?php
-namespace Fazette\Tests\Latte;
+namespace Fazette\Latte;
 
-require __DIR__."/../../_setup.php";
+require __DIR__."/../../bootstrap.php";
 
-use Fazette\Latte\Fa;
 use Latte\Engine;
 use Tester\{Assert, TestCase};
 
@@ -11,7 +10,7 @@ use Tester\{Assert, TestCase};
  * Tests class Fa as Font Awesome 5.
  * @testCase
  */
-class Fa5 extends TestCase {
+class Fa5Test extends TestCase {
 	protected function render($file) {
 		$latte = new Engine();
 		$latte->setTempDirectory(__DIR__."/../../../.temp/");
@@ -67,5 +66,5 @@ class Fa5 extends TestCase {
 	}
 }
 
-$testCase = new Fa5;
+$testCase = new Fa5Test;
 $testCase->run();

@@ -4,3 +4,4 @@ composer.phar
 /.idea/
 
 desktop.ini
+composer.lock
