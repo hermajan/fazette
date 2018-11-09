@@ -1,7 +1,12 @@
 <?php
-Tester\Assert::noError(function() {});
+use Fazette\Forms\Values;
+use Nette\Forms\Form;
+use Tester\Assert;
+use Tracy\Debugger;
 
-function setFormForRenderers(\Nette\Forms\Form $form) {
+Assert::noError(function() {});
+
+function setFormForRenderers(Form $form) {
 	$form->addGroup("Personal data");
 	$form->addText("name", "Name:");
 	$form->addEmail("email", "Email:");
@@ -51,8 +56,8 @@ function setFormForRenderers(\Nette\Forms\Form $form) {
 	
 	if($form->isSuccess()) {
 		$values = $form->getValues();
-		\Fazette\Forms\Controls::fixValues($values);
-		\Tracy\Debugger::dump($values);
+		Values::nullifyStrings($values);
+		Debugger::dump($values);
 	}
 	
 	return $form;

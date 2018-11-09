@@ -3,20 +3,20 @@
 
 {block #content}
 <h1 class="page-header">{$title}</h1>
-<p>This is an implementation of <a href="https://doc.nette.org/en/2.4/forms#toc-defaultformrenderer">form renderer</a> in <a href="https://doc.nette.org/en/2.4/forms">Nette Forms</a> for framework <a href="https://getbootstrap.com">Bootstrap</a>. It is available for version 3 and 4.</p>
+<p>This is an implementation of <a href="https://doc.nette.org/en/2.4/form-rendering">form renderer</a> in <a href="https://doc.nette.org/en/2.4/forms">Nette Forms</a> for framework <a href="https://getbootstrap.com">Bootstrap</a>. It is available for version 3 and 4.</p>
 
 <h3>Usage</h3>
 <p>When you creating new form set it like this:</p>
 <pre><code class="php">$form = new \Nette\Forms\Form;
 
 // for actual stable version of Bootstrap (currently Bootstrap 4)
-$form->setRenderer(new \Fazette\renderers\Bootstrap);
+$form->setRenderer(new \Fazette\Renderers\Bootstrap);
 
 // for Bootstrap 3
-$form->setRenderer(new \Fazette\renderers\Bootstrap3);
+$form->setRenderer(new \Fazette\Renderers\Bootstrap3);
 
 // for Bootstrap 4
-$form->setRenderer(new \Fazette\renderers\Bootstrap4);
+$form->setRenderer(new \Fazette\Renderers\Bootstrap4);
 </code></pre>
 
 <section class="panel panel-warning">
@@ -27,7 +27,7 @@ $form->setRenderer(new \Fazette\renderers\Bootstrap4);
 	
 	<div id="bootstrapForm" class="panel-collapse collapse">
 		<article class="panel-body">
-			<iframe src="{$src}/../tests/renderers/Bootstrap.php" style="height: 1100px;"></iframe>
+			<iframe src="{$src}/../tests/renderers/BootstrapTest.php" style="height: 1100px;"></iframe>
 		</article>
 	</div>
 </section>
@@ -40,7 +40,7 @@ $form->setRenderer(new \Fazette\renderers\Bootstrap4);
 	
 	<div id="bootstrap3Form" class="panel-collapse collapse">
 		<article class="panel-body">
-			<iframe src="{$src}/../tests/renderers/Bootstrap3.php" style="height: 1300px;"></iframe>
+			<iframe src="{$src}/../tests/renderers/Bootstrap3Test.php" style="height: 1300px;"></iframe>
 		</article>
 	</div>
 </section>
@@ -53,7 +53,7 @@ $form->setRenderer(new \Fazette\renderers\Bootstrap4);
 	
 	<div id="bootstrap4Form" class="panel-collapse collapse">
 		<article class="panel-body">
-			<iframe src="{$src}/../tests/renderers/Bootstrap4.php" style="height: 1100px;"></iframe>
+			<iframe src="{$src}/../tests/renderers/Bootstrap4Test.php" style="height: 1100px;"></iframe>
 		</article>
 	</div>
 </section>

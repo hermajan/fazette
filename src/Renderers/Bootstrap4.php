@@ -14,13 +14,19 @@ class Bootstrap4 extends DefaultFormRenderer {
 		"error" => ["container" => "div class='alert alert-error'", "item" => "p"],
 		"group" => ["container" => "fieldset", "label" => "legend", "description" => "p"],
 		"controls" => ["container" => null],
-		"pair" => ["container" => "div class='form-group row'", ".required" => "required", ".optional" => null,
-			".odd" => null, ".error" => "has-error"],
-		"control" => ["container" => "span class=col-sm-10", ".odd" => null, "description" => "span class=help-block",
-			"requiredsuffix" => "", "errorcontainer" => "span class=form-text", "erroritem" => "",
+		"pair" => [
+			"container" => "div class='form-group row'", ".odd" => null,
+			".required" => "required", ".optional" => null,
+			".error" => "has-error"
+		],
+		"control" => [
+			"container" => "span class='col-12 col-sm-9 col-md-10'", ".odd" => null,
+			"description" => "span class='help-block'", "requiredsuffix" => "",
+			"errorcontainer" => "span class='form-text'", "erroritem" => "",
 			".required" => "required", ".text" => "text", ".password" => "text", ".file" => "text",
-			".submit" => "btn btn-primary", ".image" => "btn", ".button" => "btn btn-secondary"],
-		"label" => ["container" => "span class='col-sm-2'", "suffix" => null, "requiredsuffix" => ""],
+			".submit" => "btn btn-primary", ".image" => "btn", ".button" => "btn btn-secondary"
+		],
+		"label" => ["container" => "span class='col-12 col-sm-3 col-md-2'", "suffix" => null, "requiredsuffix" => ""],
 		"hidden" => ["container" => null]
 	];
 	

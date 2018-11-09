@@ -11,13 +11,13 @@
 		<p>If you use <a href="https://nette.org/">Nette</a>, add to <code>config.neon</code> this:</p>
 <pre><code>latte:
 	macros:
-		- Fazette\latte\Fa
+		- Fazette\Latte\Fa
 </code></pre>
 	</li>
 	<li><p>If you use only <a href="https://latte.nette.org/">Latte</a>, install it like this:</p>
 <pre><code class="php">$latte = new Latte\Engine;
 $latte->onCompile[] = function(\Latte\Engine $engine) {
-	\Fazette\latte\Fa::install($engine->getCompiler());
+	\Fazette\Latte\Fa::install($engine->getCompiler());
 };
 </code></pre>
 	</li>

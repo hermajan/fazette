@@ -38,17 +38,17 @@ class Fa extends MacroSet {
 	public static function createIcon(string $icon, array $arguments = null) {
 		$element = Html::el("i");
 		
-		if ($icon == "b" or $icon == "l" or $icon == "s" or $icon == "r") {
+		if($icon == "b" or $icon == "l" or $icon == "s" or $icon == "r") {
 			// Markup of icon which use Font Awesome 5.
-			$class = ["fa" . $icon];
+			$class = ["fa".$icon];
 		} else {
 			// Markup of icon which use Font Awesome 4.
-			$class = ["fa fa-" . $icon];
+			$class = ["fa fa-".$icon];
 		}
 		
-		if (isset($arguments)) {
-			foreach ($arguments as $argument) {
-				$class[] = "fa-" . $argument;
+		if(isset($arguments)) {
+			foreach($arguments as $argument) {
+				$class[] = "fa-".$argument;
 			}
 		}
 		

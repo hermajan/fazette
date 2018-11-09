@@ -6,6 +6,6 @@ if(!is_dir($temp)) {
 	mkdir($temp, 0777, true);
 }
 
-Tester\Environment::setup();
-Tester\Dumper::$dumpDir = $temp."/output";
+\Tester\Environment::setup();
+\Tester\Dumper::$dumpDir = $temp."/output";
 date_default_timezone_set("Europe/Prague");

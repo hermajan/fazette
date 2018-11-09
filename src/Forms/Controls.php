@@ -15,7 +15,7 @@ class Controls {
 	 * @param array $iconArguments Arguments for icon.
 	 * @return Html HTML element for label.
 	 */
-	public static function label(string $text, string $icon=null, array $iconArguments=null) {
+	public static function label(string $text, string $icon = null, array $iconArguments = null) {
 		$content = "";
 		if(isset($icon)) {
 			$iconString = (string)Fa::createIcon($icon, $iconArguments);

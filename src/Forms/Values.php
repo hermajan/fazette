@@ -23,9 +23,11 @@ class Values {
 		foreach($values as $key => $value) {
 			if(is_array($values)) {
 				$item = &$values[$key];
-			} elseif(is_object($values)) {
+			} else if(is_object($values)) {
 				$item = &$values->{$key};
-			} else { $item = null; }
+			} else {
+				$item = null;
+			}
 			
 			if(is_array($item) or is_object($item)) {
 				Values::nullifyStrings($item);

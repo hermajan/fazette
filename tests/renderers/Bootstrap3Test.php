@@ -11,7 +11,7 @@
 	<body>
 		<main class="container-fluid">
 			<section class="row">
-				<article class="col-md-8">
+				<article class="col-12 col-sm-offset-1 col-sm-10">
 					<?php $form = new \Nette\Forms\Form;
 					$form->setRenderer(new \Fazette\Renderers\Bootstrap3);
 					echo setFormForRenderers($form); ?>

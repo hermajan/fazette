@@ -1,7 +1,10 @@
 <?php
 require_once __DIR__."/../vendor/autoload.php";
 
-$latte = new Latte\Engine;
+use Fazette\Latte\Fa;
+use Latte\Engine;
+
+$latte = new Engine;
 
 $temp = __DIR__."/.temp";
 if(!is_dir($temp)) {
@@ -9,8 +12,8 @@ if(!is_dir($temp)) {
 }
 $latte->setTempDirectory($temp);
 
-$latte->onCompile[] = function(\Latte\Engine $engine) {
-	\Fazette\Latte\Fa::install($engine->getCompiler());
+$latte->onCompile[] = function(Engine $engine) {
+	Fa::install($engine->getCompiler());
 };
 
 $parameters = [
