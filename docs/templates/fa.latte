@@ -1,8 +1,8 @@
 {layout $layoutFile}
-{var $title="Fa macro"}
+{block title}Fa macro{/block}
 
 {block #content}
-<h1 class="page-header">{$title}</h1>
+<h1 n:tag-if="title" class="page-header">{include title}</h1>
 <p>This macro is for template engine <a href="https://latte.nette.org/">Latte</a> and it can render <a href="https://fontawesome.com/">Font Awesome</a> icon.</p>
 
 <h3>Installation</h3>

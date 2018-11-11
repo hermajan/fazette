@@ -1,16 +1,17 @@
 {layout $layoutFile}
-{var $title="Fazette"}
+{block title}Fazette{/block}
 
 {block #content}
-<h1 class="page-header">{$title}</h1>
+<h1 n:tag-if="title" class="page-header">{include title}</h1>
 <p>Fazette is a library with extensions for Nette framework. It is available on <a href="{$github}" title="View Fazette on GitHub.">{fa b, github} GitHub</a>. Usage of its individual methods is shown in <a href="{$github}/tree/master/tests/">tests</a> folder.</p>
 	
 <p>It can be installed via <a href="https://getcomposer.org">Composer</a>:</p>
-<pre>composer require hermajan/fazette:dev-master</pre><br>
+<pre>composer require hermajan/fazette</pre><br>
 
 <p>It has few modules:</p>
 <ul>
-	{import "../#blocks.latte"}
-	{include #modules}
+	<li><a href="index.php?t=fa">{fa b, font-awesome-flag} Fa macro</a></li>
+	<li><a href="index.php?t=bootstrap">{fa s, bold} Bootstrap renderer</a></li>
+	<li><a href="index.php?t=forms">{fa s, list-ul} Forms</a></li>
 </ul>
 {/block}

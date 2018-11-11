@@ -17,8 +17,18 @@ $latte->onCompile[] = function(Engine $engine) {
 };
 
 $parameters = [
+	"meta" => [
+		"color"  => "#fa2e1e",
+		"description" => "",
+		"author" => "hermajan",
+		"robots" => "",
+		"title" => "",
+		"separator" => "-",
+		"name" => "Fazette"
+	],
+	"basePath" => "../",
 	"layoutFile" => "../@layout.latte",
-	"menuExists" => true, "menuFile" => "#menu.latte",
+	"menuFile" => "#menu.latte",
 	"src" => "../src",
 	"github" => "https://github.com/hermajan/fazette"
 ];

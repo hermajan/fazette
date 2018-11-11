@@ -1,9 +1,9 @@
 {layout $layoutFile}
-{var $title="Bootstrap renderer"}
+{block title}Bootstrap renderer{/block}
 
 {block #content}
-<h1 class="page-header">{$title}</h1>
-<p>This is an implementation of <a href="https://doc.nette.org/en/2.4/form-rendering">form renderer</a> in <a href="https://doc.nette.org/en/2.4/forms">Nette Forms</a> for framework <a href="https://getbootstrap.com">Bootstrap</a>. It is available for version 3 and 4.</p>
+<h1 n:tag-if="title" class="page-header">{include title}</h1>
+<p>This is an implementation of <a href="https://doc.nette.org/en/2.4/form-rendering#toc-default-renderer">form renderer</a> in <a href="https://doc.nette.org/en/2.4/forms">Nette Forms</a> for framework <a href="https://getbootstrap.com">Bootstrap</a>. It is available for version 3 and 4.</p>
 
 <h3>Usage</h3>
 <p>When you creating new form set it like this:</p>
@@ -19,39 +19,39 @@ $form->setRenderer(new \Fazette\Renderers\Bootstrap3);
 $form->setRenderer(new \Fazette\Renderers\Bootstrap4);
 </code></pre>
 
-<section class="panel panel-warning">
-	<header title="Show" class="panel-heading collapsed" data-toggle="collapse" data-target="#bootstrapForm">
-		<nav class="pull-right toggle"></nav>
-		<h4 class="panel-title">Example of form with Bootstrap renderer</h4>
+<section class="card">
+	<header title="Show" class="card-header collapsed" data-toggle="collapse" data-target="#bootstrapForm">
+		<nav class="float-right toggle"></nav>
+		<span>Example of form with Bootstrap renderer</span>
 	</header>
 	
-	<div id="bootstrapForm" class="panel-collapse collapse">
+	<div id="bootstrapForm" class="collapse">
 		<article class="panel-body">
 			<iframe src="{$src}/../tests/renderers/BootstrapTest.php" style="height: 1100px;"></iframe>
 		</article>
 	</div>
 </section>
 	
-<section class="panel panel-warning">
-	<header title="Show" class="panel-heading collapsed" data-toggle="collapse" data-target="#bootstrap3Form">
-		<nav class="pull-right toggle"></nav>
-		<h4 class="panel-title">Example of form with Bootstrap 3 renderer</h4>
+<section class="card">
+	<header title="Show" class="card-header collapsed" data-toggle="collapse" data-target="#bootstrap3Form">
+		<nav class="float-right toggle"></nav>
+		<span>Example of form with Bootstrap 3 renderer</span>
 	</header>
 	
-	<div id="bootstrap3Form" class="panel-collapse collapse">
+	<div id="bootstrap3Form" class="collapse">
 		<article class="panel-body">
 			<iframe src="{$src}/../tests/renderers/Bootstrap3Test.php" style="height: 1300px;"></iframe>
 		</article>
 	</div>
 </section>
 	
-<section class="panel panel-warning">
-	<header title="Show" class="panel-heading collapsed" data-toggle="collapse" data-target="#bootstrap4Form">
-		<nav class="pull-right toggle"></nav>
-		<h4 class="panel-title">Example of form with Bootstrap 4 renderer</h4>
+<section class="card">
+	<header title="Show" class="card-header collapsed" data-toggle="collapse" data-target="#bootstrap4Form">
+		<nav class="float-right toggle"></nav>
+		<span>Example of form with Bootstrap 4 renderer</span>
 	</header>
 	
-	<div id="bootstrap4Form" class="panel-collapse collapse">
+	<div id="bootstrap4Form" class="collapse">
 		<article class="panel-body">
 			<iframe src="{$src}/../tests/renderers/Bootstrap4Test.php" style="height: 1100px;"></iframe>
 		</article>

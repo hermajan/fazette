@@ -32,7 +32,7 @@ class Fa extends MacroSet {
 	/**
 	 * Renders Font Awesome icon.
 	 * @param string $icon Name of the Font Awesome icon.
-	 * @param array $arguments Optional arguments for the icon (see https://fontawesome.com/how-to-use/web-fonts-with-css#additional-styling).
+	 * @param array $arguments Optional arguments for the icon (see https://fontawesome.com/how-to-use/on-the-web/styling).
 	 * @return Html HTML element with icon and its arguments.
 	 */
 	public static function createIcon(string $icon, array $arguments = null) {

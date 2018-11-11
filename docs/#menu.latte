@@ -1,25 +1,25 @@
 {block #menu}
-<nav class="panel panel-default">
-	<header class="panel-heading" id="fazette-fazette" onclick="window.location='index.php?t=default'">
-		<h4 class="panel-title">
-			<a href="index.php?t=default">Fazette</a>
-			
-			<span class="pull-right">
-				<a href="{$github}" title="View Fazette on GitHub.">{fa b, "github octicon"}</a>
-			</span>
-		</h4>
+<nav class="card">
+	<header class="card-header" onclick="window.location='index.php?t=default'">
+		<a href="index.php?t=default" class="{if $_GET['t'] == 'default'}active{/if}">Fazette</a>
+		<a href="{$github}" title="View Fazette on GitHub.">{fa b, "github octicon"}</a>
 	</header>
-	<article class="panel-body">
-		<ul class="nav nav-pills nav-stacked">
-			{import "#blocks.latte"}
-			{include #modules}
-		</ul>
+	
+	<article class="card-body">
+		<div class="list-group list-group-flush">
+			<a href="index.php?t=fa" class="list-group-item list-group-item-action {if $_GET['t'] == 'fa'}active{/if}">{fa b, font-awesome-flag} Fa macro</a>
+			<a href="index.php?t=bootstrap" class="list-group-item list-group-item-action {if $_GET['t'] == 'bootstrap'}active{/if}">{fa s, bold} Bootstrap renderer</a>
+			<a href="index.php?t=forms" class="list-group-item list-group-item-action {if $_GET['t'] == 'forms'}active{/if}">{fa s, list-ul} Forms</a>
+		</div>
 	</article>
 </nav>
 
 <style>
-	#menu .panel-heading:hover, #menu .panel-heading:hover>h4>a, #menu a:hover {
-		background-color: #fa2e1e!important;
+	.card:hover, .card-header:hover {
+		border: 1px solid #fa2e1e !important;;
+	}
+	.card-header:hover, .card-header:hover a, #menu a:hover {
+		background-color: #fa2e1e !important; color: whitesmoke !important;
 	}
 </style>
 {/block}
