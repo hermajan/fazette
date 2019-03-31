@@ -4,6 +4,7 @@ php:
   - 7.0
   - 7.1
   - 7.2
+  - 7.3
   - nightly
 
 before_install:
@@ -15,8 +16,9 @@ install:
 script:
   - ./vendor/bin/tester -s ./tests/
 
-allow_failures:
-  - php: nightly
+matrix:
+  allow_failures:
+    - php: nightly
 
 after_failure:
   - for i in $(find ./tests -name \*.actual); do echo "--- $i"; cat $i; echo; echo; done

@@ -2,6 +2,7 @@ composer.phar
 /vendor/
 .temp/
 /.idea/
+/docs-html
 
 desktop.ini
 composer.lock
