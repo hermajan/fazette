@@ -18,14 +18,14 @@
 		"optimize-autoloader": true
 	},
 	"require": {
-		"php": "^7.0"
+		"php": "^7.1"
 	},
 	"require-dev": {
 		"hermajan/booty": "dev-master",
 		"latte/latte": "^2.4",
-		"nette/forms": "^2.4",
+		"nette/forms": "^3.0",
 		"nette/tester": "^2.0",
-		"nette/utils": "^2.4",
+		"nette/utils": "^3.0",
 		"tracy/tracy": "^2.5"
 	}
 }

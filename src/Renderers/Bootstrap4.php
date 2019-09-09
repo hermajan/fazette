@@ -36,7 +36,7 @@ class Bootstrap4 extends DefaultFormRenderer {
 	 * @param  string "begin", "errors", "ownerrors", "body", "end" or empty to render all
 	 * @return string
 	 */
-	public function render(Form $form, $mode = null) {
+	public function render(Form $form, ?string $mode = null): string {
 		$form->getElementPrototype()->addClass("");
 		
 		foreach($form->getControls() as $control) {

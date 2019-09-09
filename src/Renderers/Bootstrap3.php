@@ -35,12 +35,12 @@ class Bootstrap3 extends DefaultFormRenderer {
 	 * @param  string "begin", "errors", "ownerrors", "body", "end" or empty to render all
 	 * @return string
 	 */
-	public function render(Form $form, $mode = null) {
+	public function render(Form $form, ?string $mode = null): string {
 		$form->getElementPrototype()->addClass("form-horizontal");
 		
 		foreach($form->getControls() as $control) {
 			if($control instanceof Checkbox || $control instanceof CheckboxList || $control instanceof RadioList) {
-				$control->getSeparatorPrototype()->setName(null);
+				$control->getSeparatorPrototype()->setName("");
 			}
 			if($control instanceof Checkbox) {
 				$control->getLabelPrototype()->addClass("checkbox-inline");
