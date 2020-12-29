@@ -31,8 +31,8 @@ class Bootstrap3 extends DefaultFormRenderer {
 	
 	/**
 	 * Provides complete form rendering.
-	 * @param  Form $form Nette form.
-	 * @param  string "begin", "errors", "ownerrors", "body", "end" or empty to render all
+	 * @param Form $form Nette form.
+	 * @param string|null "begin", "errors", "ownerrors", "body", "end" or empty to render all
 	 * @return string
 	 */
 	public function render(Form $form, ?string $mode = null): string {

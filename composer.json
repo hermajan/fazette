@@ -18,7 +18,7 @@
 		"optimize-autoloader": true
 	},
 	"require": {
-		"php": "^7.1"
+		"php": ">=7.1"
 	},
 	"require-dev": {
 		"hermajan/booty": "dev-master",

@@ -10,9 +10,5 @@ Install this via [Composer](https://getcomposer.org):
 `composer require hermajan/fazette`
 
 ## Documentation
-* Online documentation with examples is available on [https://docs.hermajan.net/fazette](https://docs.hermajan.net/fazette).
-* Local
-	* You can read documentation from Markdown files in `docs` folder.
-	* You can also generate it via [MkDocs](https://www.mkdocs.org): 
-		* Install MkDocs and its extensions via `bash bin/install-docs.sh`
-		* Run it via `bash bin/docs.sh`
+* A simple version is on [GitHub wiki](https://github.com/hermajan/fazette/wiki)
+* With examples is available on [https://hermajan.net/fazette](https://hermajan.net/fazette)
