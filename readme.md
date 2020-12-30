@@ -4,7 +4,7 @@
 
 Library with extensions for [Nette framework](https://nette.org).
 
-## Usage
+## Installation
 Install this via [Composer](https://getcomposer.org):
 
 `composer require hermajan/fazette`

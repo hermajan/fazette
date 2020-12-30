@@ -4,42 +4,9 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a4ecc60948898278610263276a74ea9a",
+    "content-hash": "9f0e33cbbdca916678423cf6973f14c5",
     "packages": [],
     "packages-dev": [
-        {
-            "name": "hermajan/booty",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/hermajan/booty.git",
-                "reference": "2cad611c53b9364855f3335b49122256533af1db"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/hermajan/booty/zipball/2cad611c53b9364855f3335b49122256533af1db",
-                "reference": "2cad611c53b9364855f3335b49122256533af1db",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.0"
-            },
-            "require-dev": {
-                "latte/latte": "^2.4"
-            },
-            "default-branch": true,
-            "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "homepage": "https://hermajan.net/booty",
-            "support": {
-                "issues": "https://github.com/hermajan/booty/issues",
-                "source": "https://github.com/hermajan/booty/tree/master"
-            },
-            "time": "2020-05-09T01:34:27+00:00"
-        },
         {
             "name": "latte/latte",
             "version": "v2.9.2",
@@ -568,13 +535,11 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "hermajan/booty": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.1"
+        "php": ">=7.1"
     },
     "platform-dev": [],
     "plugin-api-version": "2.0.0"

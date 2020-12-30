@@ -21,7 +21,6 @@
 		"php": ">=7.1"
 	},
 	"require-dev": {
-		"hermajan/booty": "dev-master",
 		"latte/latte": "^2.4",
 		"nette/forms": "^3.0",
 		"nette/tester": "^2.0",
