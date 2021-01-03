@@ -7,13 +7,13 @@ use Nette\Utils\Html;
 /**
  * Latte macro for Font Awesome.
  */
-class Fa extends MacroSet {
+final class Fa extends MacroSet {
 	/**
 	 * Installs macro between Latte macros.
 	 * @param Compiler $compiler
 	 * @return static
 	 */
-	public static function install(Compiler $compiler) {
+	public static function install(Compiler $compiler): Fa {
 		$lc = new static($compiler);
 		$lc->addMacro("fa", [$lc, "macroFa"]);
 		return $lc;
@@ -26,17 +26,17 @@ class Fa extends MacroSet {
 	 * @return string
 	 * @throws CompileException
 	 */
-	public function macroFa(MacroNode $node, PhpWriter $writer) {
-		return $writer->write('echo \Fazette\Latte\Fa::createIcon(%node.word, %node.array)');
+	public function macroFa(MacroNode $node, PhpWriter $writer): string {
+		return $writer->write("echo \Fazette\Latte\Fa::createIcon(%node.word, %node.array)");
 	}
 	
 	/**
 	 * Renders Font Awesome icon.
 	 * @param string $icon Name of the Font Awesome icon.
-	 * @param array $arguments Optional arguments for the icon (see https://fontawesome.com/how-to-use/on-the-web/styling).
+	 * @param array|null $arguments Optional arguments for the icon (see https://fontawesome.com/how-to-use/on-the-web/styling).
 	 * @return Html HTML element with icon and its arguments.
 	 */
-	public static function createIcon(string $icon, array $arguments = null) {
+	public static function createIcon(string $icon, array $arguments = null): Html {
 		$element = Html::el("i");
 		
 		if($icon == "b" or $icon == "l" or $icon == "s" or $icon == "r") {

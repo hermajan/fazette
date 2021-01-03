@@ -9,6 +9,7 @@ use Nette\Forms\Rendering\DefaultFormRenderer;
  * Bootstrap 4 renderer for Nette Forms.
  */
 class Bootstrap4 extends DefaultFormRenderer {
+	/** @var array */
 	public $wrappers = [
 		"form" => ["container" => null],
 		"error" => ["container" => "div class='alert alert-error'", "item" => "p"],
@@ -33,25 +34,25 @@ class Bootstrap4 extends DefaultFormRenderer {
 	/**
 	 * Provides complete form rendering.
 	 * @param Form $form Nette form.
-	 * @param string|null "begin", "errors", "ownerrors", "body", "end" or empty to render all
+	 * @param string|null $mode "begin", "errors", "ownerrors", "body", "end" or empty to render all
 	 * @return string
 	 */
 	public function render(Form $form, ?string $mode = null): string {
-		$form->getElementPrototype()->addClass("");
+		$form->getElementPrototype()->appendAttribute("class","");
 		
 		foreach($form->getControls() as $control) {
 			if(($control instanceof Checkbox) or ($control instanceof CheckboxList) or ($control instanceof RadioList)) {
 				$control->getSeparatorPrototype()->setName("div class='form-check form-check-inline'");
-				$control->getControlPrototype()->addClass('form-check-input');
+				$control->getControlPrototype()->appendAttribute("class", "form-check-input");
 			}
 			if($control instanceof Checkbox) {
-				$control->getLabelPrototype()->addClass("form-check-label");
+				$control->getLabelPrototype()->appendAttribute("class", "form-check-label");
 			}
 			if(($control instanceof CheckboxList) or ($control instanceof RadioList)) {
-				$control->getItemLabelPrototype()->addClass("form-check-label");
+				$control->getItemLabelPrototype()->appendAttribute("class", "form-check-label");
 			}
 			if($control instanceof TextBase || $control instanceof SelectBox || $control instanceof MultiSelectBox) {
-				$control->getControlPrototype()->addClass("form-control");
+				$control->getControlPrototype()->appendAttribute("class", "form-control");
 			}
 			if($control instanceof TextArea) {
 				$control->getControlPrototype()->setAttribute("rows", 4);

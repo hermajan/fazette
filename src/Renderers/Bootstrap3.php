@@ -32,27 +32,27 @@ class Bootstrap3 extends DefaultFormRenderer {
 	/**
 	 * Provides complete form rendering.
 	 * @param Form $form Nette form.
-	 * @param string|null "begin", "errors", "ownerrors", "body", "end" or empty to render all
+	 * @param string|null $mode "begin", "errors", "ownerrors", "body", "end" or empty to render all
 	 * @return string
 	 */
 	public function render(Form $form, ?string $mode = null): string {
-		$form->getElementPrototype()->addClass("form-horizontal");
+		$form->getElementPrototype()->appendAttribute("class", "form-horizontal");
 		
 		foreach($form->getControls() as $control) {
 			if($control instanceof Checkbox || $control instanceof CheckboxList || $control instanceof RadioList) {
 				$control->getSeparatorPrototype()->setName("");
 			}
 			if($control instanceof Checkbox) {
-				$control->getLabelPrototype()->addClass("checkbox-inline");
+				$control->getLabelPrototype()->appendAttribute("class", "checkbox-inline");
 			}
 			if($control instanceof CheckboxList) {
-				$control->getItemLabelPrototype()->addClass("checkbox-inline");
+				$control->getItemLabelPrototype()->appendAttribute("class", "checkbox-inline");
 			}
 			if($control instanceof RadioList) {
-				$control->getItemLabelPrototype()->addClass("radio-inline");
+				$control->getItemLabelPrototype()->appendAttribute("class", "radio-inline");
 			}
 			if($control instanceof TextBase || $control instanceof SelectBox || $control instanceof MultiSelectBox) {
-				$control->getControlPrototype()->addClass("form-control");
+				$control->getControlPrototype()->appendAttribute("class", "form-control");
 			}
 			if($control instanceof TextArea) {
 				$control->getControlPrototype()->setAttribute("rows", 4);

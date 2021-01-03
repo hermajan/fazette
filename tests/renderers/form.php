@@ -4,9 +4,9 @@ use Nette\Forms\Form;
 use Tester\Assert;
 use Tracy\Debugger;
 
-Assert::noError(function() {});
+Assert::noError(function() { });
 
-function setFormForRenderers(Form $form) {
+function setFormForRenderers(Form $form): Form {
 	$form->addGroup("Personal data");
 	$form->addText("name", "Name:");
 	$form->addEmail("email", "Email:");
@@ -14,11 +14,9 @@ function setFormForRenderers(Form $form) {
 	$form->addInteger("age", "Your age:");
 	$form->addTextArea("about", "About:");
 	
-	
 	$form->addGroup("Files");
 	$form->addUpload("file", "File:");
 	$form->addMultiUpload("files", "Files:");
-	
 	
 	$form->addGroup("Selects");
 	$sex = ["m" => "male", "f" => "female"];
@@ -29,16 +27,14 @@ function setFormForRenderers(Form $form) {
 	
 	$countries = [
 		"Europe" => ["cz" => "Czech republic", "sk" => "Slovakia", "uk" => "United Kingdom"],
-		"ca" => "Canada", "us" => "USA", "?"  => "Other"
+		"ca" => "Canada", "us" => "USA", "?" => "Other"
 	];
 	$form->addSelect("country", "Country:", $countries)->setPrompt("Pick a country");
 	$form->addMultiSelect("options", "Pick many:", $countries);
 	
-	
 	$form->addGroup("Other");
 	$form->addButton("someButton", "Some button");
 	$form->addImage("imageButton", "image-button.png");
-	
 	
 	$form->addGroup("Containers");
 	$sub1 = $form->addContainer("first");
