@@ -7,7 +7,7 @@ namespace Fazette\Forms;
 class Values {
 	/**
 	 * Changes value from empty string to null.
-	 * @param string $value String value.
+	 * @param array|string $value String value.
 	 */
 	public static function nullifyString(&$value): void {
 		if($value === "") {

@@ -1,0 +1,21 @@
+# https://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+[*]
+indent_size = 4
+indent_style = tab
+
+# end_of_line = lf
+charset = utf-8
+insert_final_newline = true
+
+[*.md]
+trim_trailing_whitespace = false
+
+[*.neon]
+indent_style = tab
+
+[{*.sh, Makefile}]
+end_of_line = lf

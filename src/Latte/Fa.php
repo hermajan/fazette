@@ -33,10 +33,10 @@ final class Fa extends MacroSet {
 	/**
 	 * Renders Font Awesome icon.
 	 * @param string $icon Name of the Font Awesome icon.
-	 * @param array|null $arguments Optional arguments for the icon (see https://fontawesome.com/how-to-use/on-the-web/styling).
+	 * @param array $arguments Optional arguments for the icon (see https://fontawesome.com/how-to-use/on-the-web/styling).
 	 * @return Html HTML element with icon and its arguments.
 	 */
-	public static function createIcon(string $icon, array $arguments = null): Html {
+	public static function createIcon(string $icon, array $arguments = []): Html {
 		$element = Html::el("i");
 		
 		if($icon == "b" or $icon == "l" or $icon == "s" or $icon == "r") {
@@ -47,7 +47,7 @@ final class Fa extends MacroSet {
 			$class = ["fa fa-".$icon];
 		}
 		
-		if(isset($arguments)) {
+		if(!empty($arguments)) {
 			foreach($arguments as $argument) {
 				$class[] = "fa-".$argument;
 			}

@@ -1,6 +1,6 @@
 {
 	"name": "hermajan/fazette",
-	"description": "Extensions for Nette framework.",
+	"description": "Few addons for Nette framework.",
 	"type": "library",
 	"homepage": "https://hermajan.net/fazette",
 	"support": {
@@ -17,16 +17,24 @@
 		"sort-packages": true,
 		"optimize-autoloader": true
 	},
+	"scripts": {
+		"phpstan": [
+			"vendor/bin/phpstan analyse src -c tests/phpstan.neon"
+		],
+		"tester": [
+			"php ./vendor/nette/tester/src/tester.php -C -s tests"
+		]
+	},
 	"require": {
-		"php": ">=7.1"
+		"php": ">=7.4",
+		"nette/forms": "^3.0"
 	},
 	"require-dev": {
-		"latte/latte": "^2.4",
-		"nette/forms": "^3.0",
-		"nette/tester": "^2.0",
-		"nette/utils": "^3.0",
-		"phpstan/phpstan": "^0.12.64",
-		"phpstan/phpstan-nette": "^0.12.13",
-		"tracy/tracy": "^2.5"
+		"latte/latte": "^2.10",
+		"nette/tester": "^2.3",
+		"nette/utils": "^3.2",
+		"phpstan/phpstan": "^1.10",
+		"phpstan/phpstan-nette": "^1.2",
+		"tracy/tracy": "^2.9"
 	}
 }

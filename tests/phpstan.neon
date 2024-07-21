@@ -3,4 +3,5 @@ parameters:
 	scanDirectories:
 		- %currentWorkingDirectory%/src/
 
-	checkMissingIterableValueType: false
+	ignoreErrors:
+		- identifier: missingType.iterableValue
