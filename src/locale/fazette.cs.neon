@@ -1,0 +1,8 @@
+paginator:
+	previous:
+		arrow: "&laquo;"
+		text: "Předchozí"
+	next:
+		arrow: "&raquo;"
+		text: "Další"
+	page: "Stránka"

@@ -10,13 +10,13 @@ use Tester\{Assert, TestCase};
  * @testCase
  */
 class ValuesTest extends TestCase {
-	public function testNullifyString() {
+	public function testNullifyString(): void {
 		$value = "";
 		Values::nullifyString($value);
 		Assert::null($value);
 	}
 	
-	public function testNullifyStrings() {
+	public function testNullifyStrings(): void {
 		$array = ["", "hello"];
 		Values::nullifyStrings($array);
 		$expected = [null, "hello"];

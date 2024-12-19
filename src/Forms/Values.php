@@ -7,7 +7,7 @@ namespace Fazette\Forms;
 class Values {
 	/**
 	 * Changes value from empty string to null.
-	 * @param array|string $value String value.
+	 * @param string|null $value String value.
 	 */
 	public static function nullifyString(&$value): void {
 		if($value === "") {
@@ -30,9 +30,9 @@ class Values {
 			if(is_array($values)) {
 				$item = &$values[$key];
 			} else {
-				if(is_object($values)) {
-					$item = &$values->{$key};
-				}
+//				if(is_object($values)) {
+				$item = &$values->{$key};
+//				}
 			}
 			
 			if(isset($item)) {
@@ -40,7 +40,9 @@ class Values {
 					Values::nullifyStrings($item);
 				}
 				
-				Values::nullifyString($item);
+				if(is_string($item)) {
+					Values::nullifyString($item);
+				}
 			}
 		}
 	}

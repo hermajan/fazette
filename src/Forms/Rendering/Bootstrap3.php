@@ -1,5 +1,5 @@
 <?php
-namespace Fazette\Renderers;
+namespace Fazette\Forms\Rendering;
 
 use Nette\Forms\Controls\{Checkbox, CheckboxList, MultiSelectBox, RadioList, SelectBox, TextArea, TextBase};
 use Nette\Forms\Form;

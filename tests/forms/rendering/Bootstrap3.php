@@ -1,8 +1,9 @@
 <?php
-use Fazette\Renderers\Bootstrap3;
+
+use Fazette\Forms\Rendering\Bootstrap3;
 use Nette\Forms\Form;
 
-require_once __DIR__."/../../vendor/autoload.php";
+require_once __DIR__."/../../../vendor/autoload.php";
 require_once "form.php";
 ?>
 

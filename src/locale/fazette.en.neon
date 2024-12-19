@@ -1,0 +1,8 @@
+paginator:
+	previous:
+		arrow: "&laquo;"
+		text: "Previous"
+	next:
+		arrow: "&raquo;"
+		text: "Next"
+	page: "Page"

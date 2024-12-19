@@ -48,6 +48,7 @@ final class Fa extends MacroSet {
 		}
 		
 		if(!empty($arguments)) {
+			/** @var string $argument */
 			foreach($arguments as $argument) {
 				$class[] = "fa-".$argument;
 			}

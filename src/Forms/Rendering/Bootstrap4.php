@@ -1,5 +1,6 @@
 <?php
-namespace Fazette\Renderers;
+
+namespace Fazette\Forms\Rendering;
 
 use Nette\Forms\Controls\{Checkbox, CheckboxList, MultiSelectBox, RadioList, SelectBox, TextArea, TextBase};
 use Nette\Forms\Form;
@@ -37,7 +38,7 @@ class Bootstrap4 extends DefaultFormRenderer {
 	 * @return string
 	 */
 	public function render(Form $form, ?string $mode = null): string {
-		$form->getElementPrototype()->appendAttribute("class","");
+		$form->getElementPrototype()->appendAttribute("class", "");
 		
 		foreach($form->getControls() as $control) {
 			if(($control instanceof Checkbox) or ($control instanceof CheckboxList) or ($control instanceof RadioList)) {

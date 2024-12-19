@@ -10,12 +10,12 @@ use Tester\{Assert, TestCase};
  * @testCase
  */
 class ControlsTest extends TestCase {
-	public function testLabel() {
+	public function testLabel(): void {
 		$html = "hello";
 		Assert::match($html, (string)Controls::label("hello"));
 	}
 	
-	public function testLabelWithIcon() {
+	public function testLabelWithIcon(): void {
 		$html = '<i class="fa fa-car" aria-hidden="true"></i> hi';
 		Assert::match($html, (string)Controls::label("hi", "car"));
 		

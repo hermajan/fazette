@@ -1,0 +1,14 @@
+{varType Nette\Utils\Paginator $paginator}
+{varType bool $textable}
+
+<nav n:if="$paginator->getPageCount() > 1" class="paginator btn-group">
+	<a n:href="//this, page => $paginator->getPage() - 1" class="btn btn-default previous {if $paginator->getPage() == 1}disabled{/if}">
+		{if $textable === true}{_"fazette.paginator.previous.text"}{else}{_"fazette.paginator.previous.arrow"|noescape}{/if}
+	</a>
+	<a href="#" class="btn btn-default active">
+		{if $textable === true}{_"fazette.paginator.page"}&nbsp;{/if}{$paginator->getPage()} / {$paginator->getPageCount()}
+	</a>
+	<a n:href="//this, page => $paginator->getPage() + 1" class="btn btn-default next {if $paginator->getPage() == $paginator->getPageCount()}disabled{/if}">
+		{if $textable === true}{_"fazette.paginator.next.text"}{else}{_"fazette.paginator.next.arrow"|noescape}{/if}
+	</a>
+</nav>

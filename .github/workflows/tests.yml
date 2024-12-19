@@ -11,7 +11,7 @@ jobs:
         runs-on: ubuntu-latest
         strategy:
             matrix:
-                php: ['7.4', '8.0', '8.1', '8.2']
+                php: ['7.4', '8.0', '8.1', '8.2', '8.3']
                 dependencies: ['', '--prefer-lowest']
 
         name: PHP ${{ matrix.php }} ${{ matrix.dependencies }}
@@ -43,5 +43,5 @@ jobs:
               if: steps.composer-cache.outputs.cache-hit != 'true'
               run: composer install --no-progress ${{ matrix.dependecies }}
 
-            - run: vendor/bin/phpstan analyse src -c tests/phpstan.neon
+            - run: composer run phpstan
             - run: vendor/bin/tester -C tests

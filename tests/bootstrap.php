@@ -1,4 +1,5 @@
 <?php
+
 use Tester\Dumper;
 use Tester\Environment;
 

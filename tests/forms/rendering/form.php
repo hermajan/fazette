@@ -1,10 +1,11 @@
 <?php
+
 use Fazette\Forms\Values;
 use Nette\Forms\Form;
 use Tester\Assert;
 use Tracy\Debugger;
 
-Assert::noError(function() { });
+Assert::noError(function() {});
 
 function setFormForRenderers(Form $form): Form {
 	$form->addGroup("Personal data");

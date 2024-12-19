@@ -1,0 +1,34 @@
+{varType Nette\Utils\Paginator $paginator}
+{varType array $steps}
+{varType bool $textable}
+
+<nav n:if="$paginator->getPageCount() > 1" class="paginator">
+	<ul class="pagination">
+		<li n:if="!$paginator->isFirst()" class="page-item">
+			<a n:href="//this, 'page' => $paginator->getPage() - 1" class="page-link">
+				{if $textable === true}{_"fazette.paginator.previous.text"}{else}{_"fazette.paginator.previous.arrow"|noescape}{/if}
+			</a>
+		</li>
+
+		{foreach $steps as $step}
+			{if $step == $paginator->getPage()}
+				<li class="page-item active">
+					<a n:href="//this, 'page' => $step" class="page-link">{$step}</a>
+				</li>
+			{else}
+				<li class="page-item">
+					<a n:href="//this, 'page' => $step" class="page-link">{$step}</a>
+				</li>
+			{/if}
+			<li n:if="$iterator->nextValue > $step + 1" class="page-item disabled">
+				<a class="page-link">...</a>
+			</li>
+		{/foreach}
+
+		<li n:if="!$paginator->isLast()" class="page-item">
+			<a n:href="//this, 'page' => $paginator->getPage() + 1" class="page-link">
+				{if $textable === true}{_"fazette.paginator.next.text"}{else}{_"fazette.paginator.next.arrow"|noescape}{/if}
+			</a>
+		</li>
+	</ul>
+</nav>
