@@ -33,11 +33,11 @@ class PaginatorControl extends Control {
 	public function __construct(?string $template = null, ?Translator $translator = null) {
 		$this->setTemplateFile($template);
 		
-		$this->translator = $translator;
 		if($translator instanceof ContributteTranslator) {
-			$this->translator->addResource("neon", __DIR__."/../locale/fazette.cs.neon", "cs", "fazette");
-			$this->translator->addResource("neon", __DIR__."/../locale/fazette.en.neon", "en", "fazette");
+			$translator->addResource("neon", __DIR__."/../locale/fazette.cs.neon", "cs", "fazette");
+			$translator->addResource("neon", __DIR__."/../locale/fazette.en.neon", "en", "fazette");
 		}
+		$this->translator = $translator;
 		
 		$this->paginator = new Paginator();
 	}
