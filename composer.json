@@ -30,6 +30,7 @@
 		"nette/forms": "^3.0"
 	},
 	"require-dev": {
+		"contributte/translation": "^1.1|^2.0",
 		"latte/latte": "^2.10",
 		"nette/application": "^3.0",
 		"nette/tester": "^2.4",
