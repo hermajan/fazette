@@ -9,6 +9,7 @@ use Nette\Forms\Rendering\DefaultFormRenderer;
  * Bootstrap 3 renderer for Nette Forms.
  */
 class Bootstrap3 extends DefaultFormRenderer {
+	/** @var array */
 	public $wrappers = [
 		"form" => ["container" => null],
 		"error" => ["container" => "div class='alert alert-error'", "item" => "p"],

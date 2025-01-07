@@ -1,5 +1,4 @@
 <?php
-
 namespace Fazette\Forms\Rendering;
 
 use Nette\Forms\Controls\{Checkbox, CheckboxList, MultiSelectBox, RadioList, SelectBox, TextArea, TextBase};
@@ -7,14 +6,14 @@ use Nette\Forms\Form;
 use Nette\Forms\Rendering\DefaultFormRenderer;
 
 /**
- * Bootstrap 4 renderer for Nette Forms.
+ * Bootstrap 5 renderer for Nette Forms.
  */
-class Bootstrap4 extends DefaultFormRenderer {
+class Bootstrap5 extends DefaultFormRenderer {
 	/** @var array */
 	public $wrappers = [
 		"form" => ["container" => null],
-		"error" => ["container" => "div class='alert alert-error'", "item" => "p"],
-		"group" => ["container" => "fieldset", "label" => "legend", "description" => "p"],
+		"error" => ["container" => "div class='alert alert-danger'", "item" => "p"],
+		"group" => ["container" => "fieldset class='mb-3'", "label" => "legend", "description" => "p"],
 		"controls" => ["container" => null],
 		"pair" => [
 			"container" => "div class='form-group row'", ".odd" => null,

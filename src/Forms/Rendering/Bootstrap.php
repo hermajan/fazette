@@ -1,9 +1,7 @@
 <?php
-namespace Fazette\Renderers;
-
-use Fazette\Forms\Rendering\Bootstrap4;
+namespace Fazette\Forms\Rendering;
 
 /**
  * Alias for using renderer with actual stable version of Bootstrap.
  */
-class_alias(Bootstrap4::class, "\Fazette\\Forms\\Rendering\\Bootstrap");
+class_alias(Bootstrap5::class, "\Fazette\\Forms\\Rendering\\Bootstrap");
