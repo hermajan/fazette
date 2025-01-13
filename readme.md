@@ -2,7 +2,7 @@
 [![Tests](https://github.com/hermajan/fazette/workflows/Tests/badge.svg)](https://github.com/hermajan/fazette/actions?query=workflow%3ATests)
 [![Packagist](https://img.shields.io/packagist/v/hermajan/fazette.svg)](https://packagist.org/packages/hermajan/fazette)
 
-Library with extensions for [Nette framework](https://nette.org).
+Library with few addons for [Nette framework](https://nette.org).
 
 ## Installation
 Install this via [Composer](https://getcomposer.org):
