@@ -7,6 +7,7 @@ use Nette\Forms\Rendering\DefaultFormRenderer;
 
 /**
  * Bootstrap 5 renderer for Nette Forms.
+ * @see https://getbootstrap.com/docs/5.3/forms/overview/
  */
 class Bootstrap5 extends DefaultFormRenderer {
 	/** @var array */

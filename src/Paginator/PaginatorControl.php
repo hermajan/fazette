@@ -1,7 +1,6 @@
 <?php
 namespace Fazette\Paginator;
 
-use Contributte\Translation\Translator as ContributteTranslator;
 use Nette\Application\UI\Control;
 use Nette\Bridges\ApplicationLatte\DefaultTemplate;
 use Nette\FileNotFoundException;
@@ -32,13 +31,7 @@ class PaginatorControl extends Control {
 	
 	public function __construct(?string $template = null, ?Translator $translator = null) {
 		$this->setTemplateFile($template);
-		
-		if($translator instanceof ContributteTranslator) {
-			$translator->addResource("neon", __DIR__."/../locale/fazette.cs.neon", "cs", "fazette");
-			$translator->addResource("neon", __DIR__."/../locale/fazette.en.neon", "en", "fazette");
-		}
 		$this->translator = $translator;
-		
 		$this->paginator = new Paginator();
 	}
 	

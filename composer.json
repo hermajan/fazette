@@ -27,16 +27,19 @@
 	},
 	"require": {
 		"php": ">=7.4",
-		"nette/forms": "^3.0"
+		"nette/forms": "^3.0",
+		"nette/utils": "^3.2"
 	},
 	"require-dev": {
-		"contributte/translation": "^1.1|^2.0",
 		"latte/latte": "^2.10",
 		"nette/application": "^3.0",
+		"nette/di": "^3.1",
 		"nette/tester": "^2.4",
-		"nette/utils": "^3.2",
 		"phpstan/phpstan": "^2.0",
 		"phpstan/phpstan-nette": "^2.0",
 		"tracy/tracy": "^2.9"
+	},
+	"suggest": {
+		"contributte/translation": "For handling translations"
 	}
 }

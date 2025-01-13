@@ -7,6 +7,7 @@ use Nette\Forms\Rendering\DefaultFormRenderer;
 
 /**
  * Bootstrap 3 renderer for Nette Forms.
+ * @see https://getbootstrap.com/docs/3.4/css/#forms-example
  */
 class Bootstrap3 extends DefaultFormRenderer {
 	/** @var array */
@@ -20,13 +21,13 @@ class Bootstrap3 extends DefaultFormRenderer {
 			".odd" => null, ".error" => "has-error"
 		],
 		"control" => [
-			"container" => "span class='col-xs-12 col-sm-10'", ".odd" => null,
+			"container" => null, ".odd" => null,
 			"description" => "span class='help-block'", "requiredsuffix" => "",
 			"errorcontainer" => "span class='help-block'", "erroritem" => "",
 			".required" => "required", ".text" => "text", ".password" => "text", ".file" => "text",
 			".submit" => "btn btn-primary", ".image" => "btn", ".button" => "btn btn-default"
 		],
-		"label" => ["container" => "span class='col-xs-12 col-sm-2 control-label'", "suffix" => null, "requiredsuffix" => ""],
+		"label" => ["container" => "div class='control-label'", "suffix" => null, "requiredsuffix" => ""],
 		"hidden" => ["container" => null]
 	];
 	
@@ -37,20 +38,11 @@ class Bootstrap3 extends DefaultFormRenderer {
 	 * @return string
 	 */
 	public function render(Form $form, ?string $mode = null): string {
-		$form->getElementPrototype()->appendAttribute("class", "form-horizontal");
+		$form->getElementPrototype()->appendAttribute("class", "form-basic");
 		
 		foreach($form->getControls() as $control) {
 			if($control instanceof Checkbox || $control instanceof CheckboxList || $control instanceof RadioList) {
-				$control->getSeparatorPrototype()->setName("");
-			}
-			if($control instanceof Checkbox) {
-				$control->getLabelPrototype()->appendAttribute("class", "checkbox-inline");
-			}
-			if($control instanceof CheckboxList) {
-				$control->getItemLabelPrototype()->appendAttribute("class", "checkbox-inline");
-			}
-			if($control instanceof RadioList) {
-				$control->getItemLabelPrototype()->appendAttribute("class", "radio-inline");
+				$control->getSeparatorPrototype()->setName("div")->appendAttribute("class", $control->getControlPrototype()->type);
 			}
 			if($control instanceof TextBase || $control instanceof SelectBox || $control instanceof MultiSelectBox) {
 				$control->getControlPrototype()->appendAttribute("class", "form-control");
