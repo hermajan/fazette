@@ -12,7 +12,6 @@ use Nette\Utils\Html;
  */
 final class FaNode extends StatementNode {
 	public ExpressionNode $subject;
-	
 	public ArrayNode $args;
 	
 	/**
@@ -30,7 +29,7 @@ final class FaNode extends StatementNode {
 	 * Prints Font Awesome icon tag.
 	 */
 	public function print(PrintContext $context): string {
-		return $context->format('echo %escape(\Fazette\Latte\FaNode::createIcon(%node, %node));', $this->subject, $this->args);
+		return $context->format('echo \Fazette\Latte\FaNode::createIcon(%node, %node);', $this->subject, $this->args);
 	}
 	
 	/**

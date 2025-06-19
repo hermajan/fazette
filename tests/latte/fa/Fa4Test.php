@@ -14,9 +14,7 @@ class Fa4Test extends TestCase {
 	protected function render($file) {
 		$latte = new Engine();
 		$latte->setTempDirectory(__DIR__."/../../../.temp/");
-		$latte->onCompile[] = function(Engine $engine) {
-			Fa::install($engine->getCompiler());
-		};
+		$latte->addExtension(new FaExtension);
 		
 		$result = $latte->renderToString(__DIR__."/4/".$file.".latte");
 		return trim($result);
@@ -28,11 +26,7 @@ class Fa4Test extends TestCase {
 	}
 	
 	public function testSize() {
-		$html = '<i class="fa fa-camera-retro fa-lg" aria-hidden="true"></i>
-<i class="fa fa-camera-retro fa-2x" aria-hidden="true"></i>
-<i class="fa fa-camera-retro fa-3x" aria-hidden="true"></i>
-<i class="fa fa-camera-retro fa-4x" aria-hidden="true"></i>
-<i class="fa fa-camera-retro fa-5x" aria-hidden="true"></i>';
+		$html = '<i class="fa fa-camera-retro fa-lg" aria-hidden="true"></i><i class="fa fa-camera-retro fa-2x" aria-hidden="true"></i><i class="fa fa-camera-retro fa-3x" aria-hidden="true"></i><i class="fa fa-camera-retro fa-4x" aria-hidden="true"></i><i class="fa fa-camera-retro fa-5x" aria-hidden="true"></i>';
 		Assert::match($html, $this->render("size"));
 	}
 	
@@ -57,8 +51,7 @@ class Fa4Test extends TestCase {
 	}
 	
 	public function testAnimated() {
-		$html = '<i class="fa fa-refresh fa-spin fa-3x fa-fw" aria-hidden="true"></i>
-<i class="fa fa-spinner fa-pulse fa-3x fa-fw" aria-hidden="true"></i>';
+		$html = '<i class="fa fa-refresh fa-spin fa-3x fa-fw" aria-hidden="true"></i><i class="fa fa-spinner fa-pulse fa-3x fa-fw" aria-hidden="true"></i>';
 		Assert::match($html, $this->render("animated"));
 	}
 	
@@ -69,17 +62,11 @@ class Fa4Test extends TestCase {
 	
 	public function testStacked() {
 		$html = '<span class="fa-stack fa-lg">
-	<i class="fa fa-square-o fa-stack-2x" aria-hidden="true"></i>
-	<i class="fa fa-twitter fa-stack-1x" aria-hidden="true"></i>
-</span>
+<i class="fa fa-square-o fa-stack-2x" aria-hidden="true"></i><i class="fa fa-twitter fa-stack-1x" aria-hidden="true"></i></span>
 <span class="fa-stack fa-lg">
-	<i class="fa fa-square fa-stack-2x" aria-hidden="true"></i>
-	<i class="fa fa-terminal fa-stack-1x fa-inverse" aria-hidden="true"></i>
-</span>
+<i class="fa fa-square fa-stack-2x" aria-hidden="true"></i><i class="fa fa-terminal fa-stack-1x fa-inverse" aria-hidden="true"></i></span>
 <span class="fa-stack fa-lg">
-	<i class="fa fa-camera fa-stack-1x" aria-hidden="true"></i>
-	<i class="fa fa-ban fa-stack-2x text-danger" aria-hidden="true"></i>
-</span>';
+<i class="fa fa-camera fa-stack-1x" aria-hidden="true"></i><i class="fa fa-ban fa-stack-2x text-danger" aria-hidden="true"></i></span>';
 		Assert::match($html, $this->render("stacked"));
 	}
 }
