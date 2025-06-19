@@ -10,8 +10,7 @@ use Nette\Forms\Rendering\DefaultFormRenderer;
  * @see https://getbootstrap.com/docs/5.3/forms/overview/
  */
 class Bootstrap5 extends DefaultFormRenderer {
-	/** @var array */
-	public $wrappers = [
+	public array $wrappers = [
 		"form" => ["container" => null],
 		"error" => ["container" => "div class='alert alert-danger'", "item" => "p"],
 		"group" => ["container" => "fieldset class='mb-3'", "label" => "legend", "description" => "p"],

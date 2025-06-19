@@ -10,8 +10,7 @@ use Nette\Forms\Rendering\DefaultFormRenderer;
  * @see https://getbootstrap.com/docs/3.4/css/#forms-horizontal
  */
 class Bootstrap3Horizontal extends DefaultFormRenderer {
-	/** @var array */
-	public $wrappers = [
+	public array $wrappers = [
 		"form" => ["container" => null],
 		"error" => ["container" => "div class='alert alert-error'", "item" => "p"],
 		"group" => ["container" => "fieldset", "label" => "legend", "description" => "p"],
