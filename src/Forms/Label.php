@@ -15,7 +15,7 @@ class Label {
 	 * @param array $iconArguments Arguments for icon.
 	 * @return Html HTML element for label.
 	 */
-	public static function withFa(string $text, string $icon = null, array $iconArguments = []): Html {
+	public static function withFa(string $text, ?string $icon = null, array $iconArguments = []): Html {
 		$content = "";
 		if(isset($icon)) {
 			$iconString = (string)FaNode::createIcon($icon, $iconArguments);
