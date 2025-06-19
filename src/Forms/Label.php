@@ -1,7 +1,7 @@
 <?php
 namespace Fazette\Forms;
 
-use Fazette\Latte\Fa;
+use Fazette\Latte\FaNode;
 use Nette\Utils\Html;
 
 /**
@@ -18,7 +18,7 @@ class Label {
 	public static function withFa(string $text, string $icon = null, array $iconArguments = []): Html {
 		$content = "";
 		if(isset($icon)) {
-			$iconString = (string)Fa::createIcon($icon, $iconArguments);
+			$iconString = (string)FaNode::createIcon($icon, $iconArguments);
 			$content .= $iconString." ";
 		}
 		$content .= $text;
