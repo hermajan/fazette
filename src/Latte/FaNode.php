@@ -1,33 +1,36 @@
 <?php
 namespace Fazette\Latte;
 
-use Latte\{CompileException, Compiler, MacroNode, Macros\MacroSet, PhpWriter};
+use Latte\Compiler\Nodes\Php\{Expression\ArrayNode, ExpressionNode};
+use Latte\Compiler\Nodes\StatementNode;
+use Latte\Compiler\PrintContext;
+use Latte\Compiler\Tag;
 use Nette\Utils\Html;
 
 /**
- * Latte macro for Font Awesome.
+ * Latte tag for Font Awesome.
  */
-final class Fa extends MacroSet {
+final class FaNode extends StatementNode {
+	public ExpressionNode $subject;
+	
+	public ArrayNode $args;
+	
 	/**
-	 * Installs macro between Latte macros.
-	 * @param Compiler $compiler
-	 * @return static
+	 * Installs tag between Latte tags.
 	 */
-	public static function install(Compiler $compiler): Fa {
-		$lc = new static($compiler);
-		$lc->addMacro("fa", [$lc, "macroFa"]);
-		return $lc;
+	public static function create(Tag $tag): self {
+		$node = new self;
+		$node->subject = $tag->parser->parseUnquotedStringOrExpression();
+		$tag->parser->stream->tryConsume(',');
+		$node->args = $tag->parser->parseArguments();
+		return $node;
 	}
 	
 	/**
-	 * Font Awesome icon macro.
-	 * @param MacroNode $node
-	 * @param PhpWriter $writer
-	 * @return string
-	 * @throws CompileException
+	 * Prints Font Awesome icon tag.
 	 */
-	public function macroFa(MacroNode $node, PhpWriter $writer): string {
-		return $writer->write("echo \Fazette\Latte\Fa::createIcon(%node.word, %node.array)");
+	public function print(PrintContext $context): string {
+		return $context->format('echo %escape(\Fazette\Latte\FaNode::createIcon(%node, %node));', $this->subject, $this->args);
 	}
 	
 	/**
@@ -56,5 +59,10 @@ final class Fa extends MacroSet {
 		
 		$element->addAttributes(["class" => $class, "aria-hidden" => "true"]);
 		return $element;
+	}
+	
+	public function &getIterator(): \Generator {
+		yield $this->subject;
+		yield $this->args;
 	}
 }
