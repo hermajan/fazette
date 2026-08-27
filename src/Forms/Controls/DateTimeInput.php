@@ -19,7 +19,7 @@ class DateTimeInput extends TextInput {
 			if(is_null($value)) {
 				$this->value = $value;
 			} else {
-				throw new InvalidArgumentException(sprintf("Value must be instance of \DateTimeInterface or null, %s given in field '%s'.", gettype($value), $this->name));
+				throw new InvalidArgumentException(sprintf("Value must be instance of \DateTimeInterface or null, %s given in field '%s'.", gettype($value), $this->getName()));
 			}
 		}
 		
